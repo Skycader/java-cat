@@ -6,6 +6,8 @@ public class Cat
 
     private double minWeight;
     private double maxWeight;
+    //Кол.во съеденных грамм еды/воды
+    private double eatenGrams;
 
     public Cat()
     {
@@ -25,11 +27,13 @@ public class Cat
     public void feed(Double amount)
     {
         weight = weight + amount;
+        eatenGrams += amount;
     }
 
     public void drink(Double amount)
     {
         weight = weight + amount;
+        eatenGrams += amount;
     }
 
     public Double getWeight()
@@ -37,6 +41,12 @@ public class Cat
         return weight;
     }
 
+    public void goToTray() {
+        weight-=100;
+    }
+    public Double eatenGrams() {
+        return eatenGrams;
+    }
     public String getStatus()
     {
         if(weight < minWeight) {
