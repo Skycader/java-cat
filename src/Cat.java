@@ -1,6 +1,8 @@
 
 public class Cat
 {
+    public static int deadCats = 0;
+    private boolean alive = true;
     private double originWeight;
     private double weight;
 
@@ -50,9 +52,13 @@ public class Cat
     public String getStatus()
     {
         if(weight < minWeight) {
+            if (alive) deadCats += 1;
+            alive = false;
             return "Dead";
         }
         else if(weight > maxWeight) {
+            if (alive) deadCats += 1;
+            alive = false;
             return "Exploded";
         }
         else if(weight > originWeight) {
