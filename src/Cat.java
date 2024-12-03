@@ -5,9 +5,10 @@ public class Cat
     private boolean alive = true;
     private double originWeight;
     private double weight;
+    private Colors color;
 
-    private double minWeight;
-    private double maxWeight;
+    public static final double minWeight = 1000.0;
+    public static final double maxWeight = 9000.0;
     //Кол.во съеденных грамм еды/воды
     private double eatenGrams;
 
@@ -15,10 +16,16 @@ public class Cat
     {
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
-        minWeight = 1000.0;
-        maxWeight = 9000.0;
 
     }
+
+    public void setCatColor(Colors catColor) {
+        color = catColor;
+    }
+
+    public Colors getCatColor() {
+        return color;
+}
 
     public void meow()
     {
