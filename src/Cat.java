@@ -3,24 +3,23 @@ public class Cat
 {
     public static int deadCats = 0;
     private boolean alive = true;
-    private double originWeight;
+    private static final double originWeight = 1500.0 + 3000.0 * Math.random();
     private double weight;
     private Colors color;
-
+    public String name;
     public static final double minWeight = 1000.0;
     public static final double maxWeight = 9000.0;
     //Кол.во съеденных грамм еды/воды
     private double eatenGrams;
 
-    public Cat()
+    public Cat(String name)
     {
+        this.name = name;
         weight = 1500.0 + 3000.0 * Math.random();
-        originWeight = weight;
-
     }
 
-    public void setCatColor(Colors catColor) {
-        color = catColor;
+    public void setCatColor(Colors color) {
+        this.color = color;
     }
 
     public Colors getCatColor() {

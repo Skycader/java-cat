@@ -5,10 +5,12 @@ public class Loader {
         Scanner input = new Scanner(System.in);
 
         while (Cat.deadCats < 9) {
-            Cat cat = new Cat();
+            System.out.println("Give your new cat a name: ");
+            String name = input.nextLine();
+            Cat cat = new Cat(name);
             cat.setCatColor(Colors.GREEN);
             while (!cat.getStatus().equals("Exploded") && !cat.getStatus().equals("Dead")) {
-                System.out.println("\nYour " + cat.getCatColor() + " cat is now " + cat.getStatus() + "\n and its weight is " + cat.getWeight() + "\n and it totally ate " + cat.eatenGrams());
+                System.out.println("\nYour " + cat.getCatColor() + " " + cat.name +  " " + " cat is now " + cat.getStatus() + "\n and its weight is " + cat.getWeight() + "\n and it totally ate " + cat.eatenGrams());
                 System.out.println("\n Cats left: " + (9 - Cat.deadCats));
                 System.out.println("1. Feed");
                 System.out.println("2. Drink");
